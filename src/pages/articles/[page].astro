@@ -17,7 +17,7 @@ const { page } = Astro.props;
   
   {page.data.map(article => ( 
     <Card
-      primaryLink={`https://matthew-via-music.github.io/blog/articles/${article.frontmatter.title.toLowerCase().split(" ").join("-")}`}
+      primaryLink={`/articles/${article.frontmatter.title.toLowerCase().split(" ").join("-")}`}
       // 
       customClass={article.frontmatter.customClass}
       title={article.frontmatter.title}
