@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro'
+
+---
+
+<Layout title="Matthew Via Music">
+	<section>
+		<a class="nojs" href="/articles/1">Click here if not redirected</a>
+	</section>
+</Layout>
+
+<style is:global>
+a.nojs {
+	margin-top: 100px;
+	color: #e9e9e9;
+}
+</style>
+
+
+<script>
+window.location.replace("/articles/1")
+</script>

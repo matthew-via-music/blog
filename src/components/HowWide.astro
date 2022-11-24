@@ -1,0 +1,13 @@
+<div id="width" style="display: inline-block; padding: 4px; color: red; font-size: 40px; text-align: center; width: 100%;"></div>
+
+
+<script>
+let width = document.getElementById('width');
+window.addEventListener(
+      "resize",
+      function () {
+        width.innerHTML = `${window.innerWidth}`
+      }
+    )
+  width.innerHTML = `${window.innerWidth}`
+</script>

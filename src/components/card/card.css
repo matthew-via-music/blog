@@ -1,0 +1,186 @@
+
+ul.card {
+  /* text-align: center; */
+  /* max-width: 100%; */
+  /* width: 200px; */
+  /* margin: 0 auto; */
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+/* Card */
+
+ul.card li {
+  box-sizing: border-box;
+  display: inline-block;
+  margin: 20px;
+  max-width: 80%;
+  width: 350px;
+
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  
+  box-shadow: 1px 3px 1px 0 rgba(0, 0, 0, 0.02);
+  border: 1px solid #e9e9e9;
+  background-color: #f9f9f9;
+
+  font-size: 0.8125rem;
+  text-align: left;
+}
+
+ul.card li > a img {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    
+    max-height: 310px;
+    object-fit: cover;
+    width: 100%;
+  }
+
+
+
+
+/* Card Image Link */
+
+ul.card li > a {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Card Image */
+
+ul.card li > a img {
+  width: 100%;
+}
+
+
+/* Card Interior Spacing */
+
+ul.card li div {
+  padding: 20px 20px;
+}
+
+/* Article Title */
+
+ul.card li h2 {
+  font-size: 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 2px 0;
+}
+
+/* Card Title Link */
+
+ul.card li h2 a {
+  color: #2b2b2b;
+  text-decoration: none;
+}
+
+/* Card Text */
+
+ul.card li div p {
+  line-height: 21px;
+  color: #5d5d5d;
+  margin: 17px 0 15px;
+}
+
+
+/* CTA Buttons Group/Justifications */
+div.cta {
+  margin: -10px -20px -20px;
+}
+
+.cta-left:last-child a{
+  margin-right: 20px;
+}
+.cta-right:last-child a{
+  margin-left: 20px;
+}
+
+.cta-left {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.cta-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cta-center {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.cta-center:last-child a{
+  margin-right: 10px;
+}
+
+.cta-spread {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cta-right a, .cta-spread a{
+  margin-right: 10px;
+}
+
+
+/* CTA Buttons Link*/
+ul li div.cta a {
+  display: inline-block;
+  /* cursor: pointer; */
+  padding: 4px 8px;
+  
+  border-radius: 5px;
+
+  background-color: #f2f2f2;
+  font-size: 0.7rem;
+  color: #1a2513;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 10px 3px 1px 0 rgba(0, 0, 0, 0.08);
+}
+
+
+@media (min-width: 480px){
+  ul.card li{
+    max-width: 100%;
+  }
+}
+
+
+
+
+/* TINY */
+
+
+/* @media screen and (max-width: 292px) {
+  ul.card li div p {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  ul.card li > a {
+    height: 0;
+  }
+  ul.card li > a img {
+    visibility: hidden;
+    height: 155px;
+  }
+}
+
+@media screen and (max-width: 200px) {
+  .tiny {
+    display: none;
+    font-size: 1rem;
+  }
+  ul.card li {
+    visibility: hidden;
+  }
+} */

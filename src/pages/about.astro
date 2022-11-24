@@ -1,0 +1,164 @@
+---
+import Layout from '../layouts/Layout.astro'
+import devicons from "../images/devicons.jpg"
+---
+
+
+<Layout>
+<section class="animateOnLoad">
+
+  <h1>Musician / Coder</h1>
+  <p>Multi-instrumentalist
+  <br/> 
+  Musician and Composer.
+  <br/> 
+  Full Stack Developer
+  <br/>
+  and Designer</p>
+
+</section>
+
+<section class="devstack">
+
+  <a href="/">
+    <img class="devicons" src={devicons} alt="devicons">
+  </a>
+
+</section>
+
+</Layout>
+
+
+<style>
+.animateOnLoad.fadeIn {
+  opacity: 1;
+  -moz-transition: opacity 3s;
+  -webkit-transition: opacity 3s;
+  -o-transition: opacity 3s;
+  transition: opacity 3s;
+}
+.animateOnLoad{
+  opacity: 0;
+  animation: 1s ease-out 0s 1 slideUp;
+  width: 90%;
+  margin: auto;
+}
+@keyframes slideUp {
+  0% {
+    transform: translateY(5%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+h1, p{
+  text-align: center;
+  /* color: #23251F; */
+  font-family: serif;
+}
+h1{
+  margin: 25px 0 20px;
+  font-size: clamp(1.6rem, -1.9130rem + 13.9130vw, 8rem);
+  line-height: clamp(1rem, -1.9130rem + 13.9130vw, 5.5rem);
+}
+p{
+  max-width: 300px;
+  width: 80%;
+  /* font-size: clamp(1rem, -0.0404rem + 4.9689vw, 3.2rem);
+  line-height: calc(clamp(1rem, -0.0404rem + 4.9689vw, 3.5rem) + 1rem); */
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.6;
+  font-family: 'Droid Serif', serif;
+}
+p > span{
+  display: block;
+  font-size: clamp(1rem, -0.0404rem + 4.9689vw, 1.2rem);
+  margin-top: 5px;
+  color: #ccc;
+}
+
+section.devstack{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0px;
+}
+img.devicons.zoomIn{
+  scale: 1;
+  transition: all 1s;
+}
+img.devicons{
+  width: 100%;
+  height: 100%;
+  max-width: 300px;
+  max-height: 300px;
+  margin-top: -5px;
+  scale: .8;
+  animation: 1s ease-out;
+
+  /* filter: invert(70%) sepia(0%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%); */
+}
+/* img.devicon.iconlarge{
+  width: clamp(5rem, -0.0404rem + 4.9689vw, 10.2rem);
+  height: clamp(5rem, -0.0404rem + 4.9689vw, 10.2rem);
+}
+img.devicon.iconsmall{
+  width: clamp(3.5rem, -0.0404rem + 4.9689vw, 1.8rem);
+  height: clamp(3.5rem, -0.0404rem + 4.9689vw, 1.8rem);
+  margin-right: 5px;
+  margin-top: -15px;
+}
+img.devicon.iconsmall:last-child{
+  margin-right: -5px;
+} */
+
+@media (min-width: 480px){
+  p{
+    max-width: 80%;
+  }
+}
+
+@media (min-width: 677px){
+  h1{
+    margin: 30px 0 28px;
+  }
+  img.devicons{
+    margin-top: 0px;
+  }
+  p{
+    max-width: 70%;
+  }
+  img.devicons{
+    max-width: 450px;
+    max-height: 450px;
+    margin-top: 0px;
+  }
+}
+
+@media (min-width: 900px){
+  h1{
+    margin: 50px 0 50px;
+  }
+  p{
+    max-width: 95%;
+  }
+  p > span{
+  margin-top: -5px;
+  }
+  section.devstack{
+    margin-top: 5px;
+  }
+}
+</style>
+
+<script>
+const sect = document.querySelector('section.animateOnLoad')
+const zoom = document.querySelector('img.devicons')
+  window.onload = function() {
+    sect.classList.add("fadeIn")
+    zoom.classList.add("zoomIn")
+  }
+
+</script>

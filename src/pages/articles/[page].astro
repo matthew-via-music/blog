@@ -1,0 +1,99 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import Card from '../../components/card/Card.astro'
+
+export async function getStaticPaths({ paginate }) {
+  const allArticles = await Astro.glob("../../markdown/*md")
+  return paginate(allArticles, { pageSize: 6 });
+}
+// All paginated data is passed on the "page" prop
+const { page } = Astro.props;
+
+---
+<Layout title="Matthew Via Music">
+
+
+<section class="wrapper">
+  
+  {page.data.map(article => ( 
+    <Card
+      primaryLink={`/articles/${article.frontmatter.title.toLowerCase().split(" ").join("-")}`}
+      // 
+      customClass={article.frontmatter.customClass}
+      title={article.frontmatter.title}
+      info={article.frontmatter.excerpt}
+      img={article.frontmatter.image ? article.frontmatter.image : "https://easycss.github.io/easyimage/img4.png"}
+      ctaPrimary="Read more"
+      ctaPosition={article.frontmatter.ctaPosition}
+    />
+  ))}
+
+</section>
+
+<section>
+  <div class="pagination-links">
+    {page.url.prev ? <a href={page.url.prev}>&larr; </a> : null}
+    <p>{page.currentPage}</p>
+    {page.url.next ? <a href={page.url.next}>&rarr;</a> : null}
+  </div>
+</section>
+
+</Layout>
+
+
+<style is:inline>
+.wrapper{
+	margin: 20px 0;
+  animation: 1s ease-out 0s 1 slideUp;
+}
+.pagination-links{
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pagination-links > p{
+  margin-top: 4.2px;
+}
+.pagination-links > a {
+  text-decoration: none;
+  margin: 0px 5px;
+  font-size: 1.5rem;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(2%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 850px){
+  .wrapper{
+		display: grid;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: start;
+		grid-template-columns: repeat(2, 1fr);
+    padding: 0 12%;
+		gap: 24px;
+  }
+}
+
+@media (min-width: 1070px) and (max-width: 1285px){
+  .wrapper{
+    padding: 0 15%;
+  }
+}
+
+@media (min-width: 1285px){
+	.wrapper{
+		grid-template-columns: repeat(3, 1fr);
+    padding: 0 0%;
+  }
+}
+</style>
+
+

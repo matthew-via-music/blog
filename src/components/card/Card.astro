@@ -1,0 +1,57 @@
+---
+import "./card.css"
+
+export interface Props{
+  customClass?: string
+  title: string
+  info?: string
+  img?: string
+  primaryLink?: string
+  secondaryLink?: string
+  ctaPrimary?: string
+  ctaSecondary?: string
+  ctaPosition?: string
+}
+const {
+  customClass, 
+  title = "Awesome article title", 
+  info="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eu lacus mattis laoreet diam a, volutpat magna.", img="https://easycss.github.io/easyimage/img3.png", 
+  primaryLink, 
+  secondaryLink, 
+  ctaPrimary="Click here", 
+  ctaSecondary, 
+  ctaPosition="left"
+} = Astro.props as Props
+---
+
+    <ul class="card">
+      
+      <li>
+        <a href={primaryLink}>
+          <img
+            class={customClass}
+            src={img}
+            alt={title} />
+        </a>
+        <div>
+          <h2><a href={primaryLink}>{title}</a></h2>
+          <p>
+            {info}
+          </p>
+
+          <div class={`cta cta-${ctaPosition}`}>
+            <a href={primaryLink}>{ctaPrimary} &rarr;</a>
+            {ctaSecondary && <a href={secondaryLink}>{ctaSecondary} &rarr;</a>}
+          </div>
+        </div>
+      </li>
+
+    </ul>
+
+
+    <!-- Screen below 199px -->
+    <!-- <div class="tiny">
+      The screen is too small for this awesome layout. Please try on another
+      device.
+    </div> -->
+    <!--  -->

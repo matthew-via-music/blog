@@ -1,0 +1,70 @@
+@import url(https://fonts.googleapis.com/css?family=Droid+Serif);
+@import url("./saturation.css");
+
+:root{
+	--darkbg2: #333;
+  --bgcolor: #f7f7f7;
+  --green: #236e25;
+  --red: #ff0057;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.docrefbtn a, .docrefbtn a:visited{
+  text-decoration: none;
+  color: #f7f7f7; 
+}
+html, body{
+  overflow-y: scroll;
+}
+body{
+  overflow-X: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-wrap: break-word;
+  font-family: sans-serif;
+  background-color: var(--bgcolor);
+  color: #343A40;
+}
+section{
+  /* margin: 2%!important; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+section:last-of-type{
+  padding-bottom: 200px;
+}
+
+.center{
+    display:flex;
+    justify-content: center;
+}
+
+h4{
+  font-weight: normal;
+  color: cyan;
+  font-size: .8rem;
+}
+
+@media (min-width: 375px){
+		/* iphone X size  */
+}
+
+@media (min-width: 480px){
+  section{
+    max-width: 1140px;
+    /* margin: 0 auto!important; */
+    margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+    justify-content: center;
+	}
+
+}

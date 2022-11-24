@@ -1,0 +1,16 @@
+/* dynamic class for card component */
+.sat5{
+		filter: saturate(5);
+}
+.sat4{
+		filter: saturate(4);
+}
+.sat3{
+		filter: saturate(3);
+}
+.sat2{
+		filter: saturate(2);
+}
+.sat{
+    filter: saturate(1.5);
+}

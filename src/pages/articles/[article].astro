@@ -1,0 +1,209 @@
+---
+import Layout from "../../layouts/Layout.astro"
+
+export async function getStaticPaths(){
+  const articles = await Astro.glob("../../markdown/*.md")
+
+  return articles.map(article => ({
+    
+    params: {
+      article: article.frontmatter.title.toLowerCase().split(" ").join("-")
+    },
+    props: {
+      article
+    }
+  }))
+}
+
+const { Content, frontmatter } = Astro.props.article
+---
+
+
+<Layout title={"Matthew Via Music: " + frontmatter.title}>
+<section class="animateOnLoad">
+    <div class="contentWrapper">
+    <!--  -->
+    <!--  -->
+      <div id="button" class="docrefbtn"></div>
+    <!--  -->
+    <!--  -->
+    </div>
+          
+    <div class="center">
+      <h2><span>{frontmatter.title}</span></h2>
+    </div>
+    
+    <div class="contentWrapper">
+    
+      {frontmatter.image && <img class={frontmatter.customClass} src={frontmatter.image} alt={frontmatter.title} />}
+
+      <div class="content">
+        <Content />
+      </div>
+      
+    </div>
+  
+    <div class="btns">
+      {frontmatter.secondaryLink && <a href={frontmatter.primaryLink}>{frontmatter.ctaPrimary}</a>}
+      
+      {frontmatter.secondaryLink && <a href={frontmatter.secondaryLink}>{frontmatter.ctaSecondary}</a>}
+    </div>
+
+</section>
+</Layout>
+
+
+<style>
+/* see global.css for `docrefbtn` anchor styling */
+.docrefbtn{
+  margin: 20px 0;
+  outline: none;
+  background-color: #333;
+  border-radius: 4px;
+  border: 0;
+  padding: 6px 8px;
+  transition: all .5s ease-in;
+}
+
+.animateOnLoad.fadeIn {
+    opacity: 1;
+    -moz-transition: opacity 2s;
+    -webkit-transition: opacity 2s;
+    -o-transition: opacity 2s;
+    transition: opacity 2s;
+}
+.animateOnLoad{
+  opacity: 0;
+  animation: 1s ease-out 0s 1 slideUp;
+}
+@keyframes slideUp {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.btns{
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.btns a{
+  margin: 20px 0;
+  display: inline-block;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  font-size: 0.7rem;
+  color: #1a2513;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 10px 3px 1px 0 rgba(0, 0, 0, 0.08);
+}
+
+h2{
+  display: inline-block;
+  font-size: 1rem;
+  margin: 5px 0 20px;
+  background-color: yellow;
+  padding: 12px;
+  rotate: -3deg;
+}
+span{
+  display: inline-block;
+  rotate: 3deg;
+}
+.contentWrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 90%;
+}
+img{
+  margin: 20px 0 30px;
+  max-width: 100%;
+  width: 300px;
+  height: auto;
+}
+
+.content{
+    margin-bottom: 20px;
+    /* font-size: clamp(1rem, -0.0404rem + 4.9689vw, 2.2rem);
+    line-height: calc(clamp(1rem, -0.0404rem + 4.9689vw, 3.5rem) + 1rem); */
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.6;
+    font-family: 'Droid Serif', serif;
+  }
+
+@media (min-width: 480px){
+  .docrefbtn{
+    margin: 40px 0 10px;
+    font-size: 1rem;
+  }
+  h2{
+    font-size: 1.5rem;
+    margin: 25px 0 30px;
+  }
+  .contentWrapper {
+    font-size: 1.2rem;
+  }
+  img{
+    margin: 20px 0 50px;
+    max-width: 100%;
+    width: 300px;
+    height: auto;
+  }
+}
+@media (min-width: 840px){
+  .docrefbtn{
+    font-size: 1rem;
+  }
+  .contentWrapper {
+    max-width: 1140px;
+    width: 95%;
+    flex-direction: row;
+    align-items: flex-start;
+    font-size: 1.4rem;
+  }
+  img{
+    width: 100%;
+    max-width: 600px;
+    margin-right: 20px;
+  }
+  .content{
+    max-width: 900px;
+    margin-top: 20px;
+    margin-left: 50px;
+  }
+}
+/* responsive by height */
+@media (max-height: 900px){
+  .content{
+    display: flex;
+    flex-direction: column;
+    /* gap: 2rem 0; */
+  }
+}
+</style>
+
+<!--  -->
+<!--  -->
+<!--  -->
+
+<script defer>
+const button = document.getElementById('button')
+const sect = document.querySelector('section.animateOnLoad')
+  window.onload = function() {
+    if(document.referrer) {
+      button.innerHTML = `<a href="javascript:history.back()">Back</a>` 
+    }
+    else {button.innerHTML = `<a href="javascript:location.href='/articles/1'">Articles</a>`}
+
+    sect.classList.add("fadeIn")
+  }
+</script>

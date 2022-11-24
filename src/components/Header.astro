@@ -1,0 +1,58 @@
+<section>
+		<a href="/"><img src="https://avatars.githubusercontent.com/u/103645784?v=4" alt="MVM"></a>
+	<nav>
+		<a href="/">Work</a>
+		
+		<a href="/about">About</a>
+	
+	</nav>
+</section>
+
+<style>
+/* .hideOnMobile{
+	display: none;
+} */
+img{
+		margin: 25px 0 15px;
+		border-radius: 50%;
+		width: 85px;
+		height: 85px;
+	}
+nav{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+	align-items: center;
+	max-width: 100%;
+}
+
+nav a{
+	font-size: 1.1rem;
+  text-decoration: none;
+  color: #007BFF;
+  padding: 10px;
+}
+nav a:first-child{
+	border-right: 1px solid #ccc;
+}
+
+@media (min-width: 850px){
+	img{
+		width: 85px;
+		height: 85px;
+	}
+}
+
+@media (min-width: 890px){
+	.hideOnMobile{
+		display: block;
+}
+	nav{
+		max-width: 90%;
+		margin: 0 auto;
+	}
+	nav a{
+		font-size: 1.2rem;
+	}
+}
+</style>
