@@ -19,7 +19,7 @@ const { Content, frontmatter } = Astro.props.article
 ---
 
 
-<Layout title={"Matthew Via Music: " + frontmatter.title}>
+<Layout title={"Matthew Via Music: " + frontmatter.title} twitterCard={frontmatter.image}>
 <section class="animateOnLoad">
     <div class="contentWrapper">
     <!--  -->

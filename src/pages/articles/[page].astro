@@ -24,7 +24,7 @@ const { page } = Astro.props;
       info={article.frontmatter.excerpt}
       img={article.frontmatter.image ? article.frontmatter.image : "https://easycss.github.io/easyimage/img4.png"}
       ctaPrimary="Read more"
-      ctaPosition={article.frontmatter.ctaPosition}
+      ctaPosition={article.frontmatter.ctaPosition ? article.frontmatter.ctaPosition : "center"}
     />
   ))}
 
