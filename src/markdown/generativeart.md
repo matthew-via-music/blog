@@ -4,10 +4,10 @@ excerpt: javascript generating random images...
 author: MVM
 image: https://olk1.com/mvm_article_images/org.jpg
 customClass: sat5
-primaryLink: geogen.olk1.com
+primaryLink: https://geogen.olk1.com
 secondaryLink: 
-ctaPrimary: Repo 
-ctaSecondary: Launch Site
+ctaPrimary: Launch Site
+ctaSecondary: 
 ctaPosition: center
 ---
 
