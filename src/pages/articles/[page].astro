@@ -33,7 +33,7 @@ const { page } = Astro.props;
 <section>
   <div class="pagination-links">
     {page.url.prev ? <a href={page.url.prev}>&larr; </a> : null}
-    <p>{page.currentPage}</p>
+    <p>{page.url.prev && page.currentPage || page.url.next && page.currentPage}</p>
     {page.url.next ? <a href={page.url.next}>&rarr;</a> : null}
   </div>
 </section>

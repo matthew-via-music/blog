@@ -7,8 +7,12 @@ ul.card {
   list-style: none;
   display: flex;
   justify-content: center;
+  transform: skew(3deg);
+  transition: all .5s ease-in;
 }
-
+ul.card:hover{
+  transform: skew(0deg);
+}
 /* Card */
 
 ul.card li {
@@ -29,13 +33,17 @@ ul.card li {
 
   font-size: 0.8125rem;
   text-align: left;
-}
 
+  transition: all .5s ease-in;
+}
+ul.card li:hover{
+  box-shadow: 10px 10px 1px 0 rgba(255, 0, 0, .1);
+}
 ul.card li > a img {
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     
-    max-height: 310px;
+    height: 310px;
     object-fit: cover;
     width: 100%;
   }

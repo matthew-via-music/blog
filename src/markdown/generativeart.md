@@ -1,17 +1,14 @@
 ---
 title: Generative Art
-excerpt: Functional programming to generate random artworks...
+excerpt: javascript generating random images...
 author: MVM
 image: https://olk1.com/mvm_article_images/org.jpg
 customClass: sat5
-primaryLink: 
-secondaryLink:
+primaryLink: geogen.olk1.com
+secondaryLink: 
 ctaPrimary: Repo 
 ctaSecondary: Launch Site
-ctaPosition: left
+ctaPosition: center
 ---
 
-Generative animated artworks programmed using the P5 Javascript library with both Functional and Object Oriented programming methodologies.
-
-\
-Link to follow...
+Generative animated artworks programmed using the P5 Javascript library.
