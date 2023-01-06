@@ -35,7 +35,7 @@ const { Content, frontmatter } = Astro.props.article
     
     <div class="contentWrapper">
     
-      {frontmatter.image && <a href={frontmatter.primaryLink}><img class={frontmatter.customClass} src={frontmatter.image} alt={frontmatter.title} /></a>}
+      {frontmatter.image && <a target="_blank" href={frontmatter.primaryLink}><img class={frontmatter.customClass} src={frontmatter.image} alt={frontmatter.title} /></a>}
 
       <div class="content">
         <Content />
@@ -44,9 +44,9 @@ const { Content, frontmatter } = Astro.props.article
     </div>
   
     <div class="btns">
-      {frontmatter.primaryLink && <a href={frontmatter.primaryLink}>{frontmatter.ctaPrimary}</a>}
+      {frontmatter.primaryLink && <a target="_blank" href={frontmatter.primaryLink}>{frontmatter.ctaPrimary}</a>}
       
-      {frontmatter.secondaryLink && <a href={frontmatter.secondaryLink}>{frontmatter.ctaSecondary}</a>}
+      {frontmatter.secondaryLink && <a target="_blank" href={frontmatter.secondaryLink}>{frontmatter.ctaSecondary}</a>}
     </div>
 
 </section>
