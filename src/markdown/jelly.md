@@ -3,7 +3,7 @@ title: Generative Animation
 excerpt: P5 javascript libary...
 author: Ani
 image: https://org.olk1.com/picz/1668879421.png
-customClass: sat5
+customClass: sat2
 primaryLink: https://ani.olk1.com/
 secondaryLink: 
 ctaPrimary: Launch Site
